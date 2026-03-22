@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pixel Awareness Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      color: #0f172a;
+    }
+
+    .notice {
+      background: #eef6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 12px 16px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .pixel-note {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-top: 20px;
+    }
+
+    /* Hidden tracking pixel */
+    .tracking-pixel {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tracking Pixel Awareness Demo</h1>
+
+    <p>
+      This page is for training and awareness purposes. It demonstrates how a
+      very small remote image can be loaded when a user opens a page or email.
+    </p>
+
+    <div class="notice">
+      When this page loads, the browser will request a 1×1 image from a remote server.
+      That request can be logged by the server.
+    </div>
+
+    <p>
+      In a real-world example, this technique is often used in email marketing to
+      measure opens, but it can also be used to collect metadata such as when a
+      message was viewed.
+    </p>
+
+    <p class="pixel-note">
+      Example hidden image below:
+    </p>
+
+    <img
+      class="tracking-pixel"
+      src="https://example.com/tracker/pixel.gif?campaign=safety_awareness&user_id=demo123"
+      alt=""
+      width="1"
+      height="1"
+    >
+  </div>
+</body>
+</html>
